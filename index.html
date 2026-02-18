@@ -9,15 +9,23 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 body{
-background-color:#0a0a0a;
-
+background-color:#0b0f1a;
 background-image:
-radial-gradient(circle at 50% 100%, rgba(212,175,55,0.15) 2px, transparent 2px),
-radial-gradient(circle at 50% 0%, rgba(212,175,55,0.15) 2px, transparent 2px);
-
+repeating-linear-gradient(
+  90deg,
+  rgba(212,175,55,0.15) 0px,
+  rgba(212,175,55,0.15) 2px,
+  transparent 2px,
+  transparent 120px
+),
+repeating-radial-gradient(
+  circle at 60px 60px,
+  transparent 0px,
+  transparent 58px,
+  rgba(212,175,55,0.15) 60px,
+  transparent 62px
+);
 background-size:120px 120px;
-background-position:0 0, 60px 60px;
-
 color:#fff;
 display:flex;
 justify-content:center;
