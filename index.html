@@ -75,5 +75,35 @@ body{background:#000;color:#fff;display:flex;justify-content:center;align-items:
   feather.replace({color: 'white', width: 20, height: 20});
 </script>
 
-</body>
+/* Smooth Fade In */
+body{
+animation: fadeIn 1.2s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(8px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* Professional Button Upgrade */
+.link-btn{
+transition: all .35s ease;
+border:1px solid rgba(255,255,255,0.15);
+}
+
+.link-btn:hover{
+background:#fff;
+color:#000;
+transform:translateY(-4px);
+box-shadow:0 10px 30px rgba(255,255,255,0.08);
+}
+
+/* Subtle logo polish */
+.logo{
+transition:all .4s ease;
+}
+
+.logo:hover{
+transform:scale(1.04);
+}
 </html>
