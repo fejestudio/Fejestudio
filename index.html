@@ -8,100 +8,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-
-/* بک‌گراند مشکی و اصلی */
-body{
-  background:#000;
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  min-height:100vh;
-  text-align:center;
-  animation:fadeIn 1.2s ease; /* انیمیشن ورود */
-}
-
-/* انیمیشن نرم ورود */
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(8px);}
-  to{opacity:1; transform:translateY(0);}
-}
-
-.container{
-  width:100%;
-  max-width:500px;
-  padding:40px 20px;
-}
-
-.logo{
-  width:160px;
-  margin:0 auto 25px auto;
-  display:block;
-  transition:all .4s ease; /* انیمیشن لوگو */
-}
-.logo:hover{
-  transform:scale(1.05);
-}
-
-.brand-name{
-  font-size:38px;
-  font-weight:500;
-  letter-spacing:4px;
-  margin-bottom:10px;
-}
-
-.slogan{
-  font-size:14px;
-  opacity:0.6;
-  letter-spacing:2px;
-  margin-bottom:40px;
-  text-transform:uppercase;
-}
-
-.links{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-}
-
-.link-btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  padding:14px;
-  border:1px solid rgba(255,255,255,0.15);
-  border-radius:12px;
-  text-decoration:none;
-  color:#fff;
-  font-size:15px;
-  transition:all .35s ease; /* هاور نرم */
-  backdrop-filter:blur(2px);
-}
-
-.link-btn:hover{
-  background:#fff;
-  color:#000;
-  transform:translateY(-4px);
-  box-shadow:0 10px 25px rgba(255,255,255,0.08);
-}
-
-.link-btn i{
-  width:20px;
-  height:20px;
-}
-
-.footer{
-  margin-top:50px;
-  font-size:12px;
-  opacity:.4;
-}
-  /* آیکون ها هنگام هاور هم‌رنگ متن شوند */
-.link-btn:hover i {
-  stroke: currentColor; /* رنگ Feather رو میاره هم‌رنگ متن */
-  fill: currentColor;   /* برای آیکون‌هایی که fill دارند */
-  }
-</style>
+body{background:#000;color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center;}
+.container{width:100%;max-width:500px;padding:40px 20px;}
+.logo{width:160px;margin:0 auto 25px auto;display:block;}
+.brand-name{font-size:38px;font-weight:500;letter-spacing:4px;margin-bottom:10px;}
+.slogan{font-size:14px;opacity:0.6;letter-spacing:2px;margin-bottom:40px;text-transform:uppercase;}
+.links{display:flex;flex-direction:column;gap:18px;}
+.link-btn{display:flex;align-items:center;justify-content:center;gap:12px;padding:14px;border:1px solid #333;border-radius:12px;text-decoration:none;color:#fff;font-size:15px;transition:all .3s ease;}
+.link-btn:hover{background:#fff;color:#000;transform:translateY(-3px);}
+.link-btn i{width:20px;height:20px;}
+.footer{margin-top:50px;font-size:12px;opacity:.4;}
 </style>
 </head>
 <body>
@@ -125,7 +41,6 @@ body{
             Email
         </a>
 
-        <!-- Instagram Added Here -->
         <a href="https://www.instagram.com/feje_studio?igsh=ZWo0dnFyeGkzbXJ1" target="_blank" class="link-btn">
             <i data-feather="instagram"></i>
             Instagram
@@ -149,14 +64,30 @@ body{
     </div>
 
     <div class="footer">
-        © 2026 Feje Studio 
+        © 2026 Feje Studio — make real your imagine!
     </div>
 
 </div>
 
+<!-- Feather Icons Script with hover fix -->
 <script src="https://unpkg.com/feather-icons"></script>
 <script>
+  // جایگزین کردن آیکون‌ها با رنگ سفید اولیه
   feather.replace({color: 'white', width: 20, height: 20});
+
+  // اصلاح رنگ آیکون‌ها هنگام هاور
+  document.querySelectorAll('.link-btn').forEach(btn => {
+    btn.addEventListener('mouseenter', () => {
+      btn.querySelectorAll('i').forEach(icon => {
+        icon.setAttribute('stroke', getComputedStyle(btn).color);
+      });
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.querySelectorAll('i').forEach(icon => {
+        icon.setAttribute('stroke', 'white');
+      });
+    });
+  });
 </script>
 
 </body>
