@@ -8,7 +8,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body{background:#000;color:#fff;display:flex;justify-content:center;align-items:center;min-height:100vh;text-align:center;}
+body{
+background-color:#000;
+background-image:
+linear-gradient(45deg, rgba(255,255,255,0.04) 25%, transparent 25%),
+linear-gradient(-45deg, rgba(255,255,255,0.04) 25%, transparent 25%),
+linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.04) 75%),
+linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.04) 75%);
+background-size:40px 40px;
+background-position:0 0, 0 20px, 20px -20px, -20px 0px;
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+text-align:center;
+    }
 .container{width:100%;max-width:500px;padding:40px 20px;}
 .logo{width:160px;margin:0 auto 25px auto;display:block;}
 .brand-name{font-size:38px;font-weight:500;letter-spacing:4px;margin-bottom:10px;}
