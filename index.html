@@ -14,9 +14,33 @@ body{background:#000;color:#fff;display:flex;justify-content:center;align-items:
 .brand-name{font-size:38px;font-weight:500;letter-spacing:4px;margin-bottom:10px;}
 .slogan{font-size:14px;opacity:0.6;letter-spacing:2px;margin-bottom:40px;text-transform:uppercase;}
 .links{display:flex;flex-direction:column;gap:18px;}
-.link-btn{display:flex;align-items:center;justify-content:center;gap:12px;padding:14px;border:1px solid #333;border-radius:12px;text-decoration:none;color:#fff;font-size:15px;transition:all .3s ease;}
-.link-btn:hover{background:#fff;color:#000;transform:translateY(-3px);}
-.link-btn i{width:20px;height:20px;}
+.link-btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  padding:14px;
+  border:1px solid #333;
+  border-radius:12px;
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+  transition:all .3s ease;
+}
+.link-btn:hover{
+  background:#fff;
+  color:#000;
+  transform:translateY(-3px);
+}
+.link-btn svg{
+  width:20px;
+  height:20px;
+  transition: all .3s ease;
+}
+.link-btn:hover svg{
+  stroke:#000;
+  fill:#000;
+}
 .footer{margin-top:50px;font-size:12px;opacity:.4;}
 </style>
 </head>
@@ -32,59 +56,48 @@ body{background:#000;color:#fff;display:flex;justify-content:center;align-items:
     <div class="links">
 
         <a href="https://www.feje-studio.com" target="_blank" class="link-btn">
-            <i data-feather="globe"></i>
+            <!-- Globe SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 0 20"/></svg>
             Website
         </a>
 
         <a href="mailto:feje.Studio@gmail.com" class="link-btn">
-            <i data-feather="mail"></i>
+            <!-- Mail SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><polyline points="4,4 12,12 20,4"/></svg>
             Email
         </a>
 
         <a href="https://www.instagram.com/feje_studio?igsh=ZWo0dnFyeGkzbXJ1" target="_blank" class="link-btn">
-            <i data-feather="instagram"></i>
+            <!-- Instagram SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1"/></svg>
             Instagram
         </a>
 
         <a href="https://t.me/feje_studio" target="_blank" class="link-btn">
-            <i data-feather="send"></i>
+            <!-- Telegram SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M2 12l20-8-8 20-4-8-4-4z"/></svg>
             Telegram
         </a>
 
         <a href="tel:+989120467064" class="link-btn">
-            <i data-feather="phone"></i>
+            <!-- Phone SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.12 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.12-8.63A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.83.32 1.65.57 2.45a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.8.25 1.62.44 2.45.57a2 2 0 0 1 1.72 2z"/></svg>
             Call Us
         </a>
 
         <a href="#" class="link-btn">
-            <i data-feather="map-pin"></i>
+            <!-- Map Pin SVG -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-6-7-6-11a6 6 0 0 1 12 0c0 4-6 11-6 11z"/><circle cx="12" cy="10" r="3"/></svg>
             Address
         </a>
 
     </div>
 
     <div class="footer">
-        © 2026 Feje Studio
+        © 2026 Feje Studio — make real your imagine!
     </div>
 
 </div>
-
-<script src="https://unpkg.com/feather-icons"></script>
-<script>
-  // اول همه آیکون‌ها رو سفید می‌کنیم
-  feather.replace({color: 'white', width: 20, height: 20});
-
-  // اضافه کردن هاور دقیق برای رنگ آیکون‌ها
-  document.querySelectorAll('.link-btn').forEach(btn => {
-    const icons = btn.querySelectorAll('svg');
-    btn.addEventListener('mouseenter', () => {
-      icons.forEach(icon => icon.setAttribute('stroke','#000'));
-    });
-    btn.addEventListener('mouseleave', () => {
-      icons.forEach(icon => icon.setAttribute('stroke','#fff'));
-    });
-  });
-</script>
 
 </body>
 </html>
