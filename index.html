@@ -18,10 +18,6 @@ body{background:#000;color:#fff;display:flex;justify-content:center;align-items:
 .link-btn:hover{background:#fff;color:#000;transform:translateY(-3px);}
 .link-btn i{width:20px;height:20px;}
 .footer{margin-top:50px;font-size:12px;opacity:.4;}
-    /* آیکون‌ها هم‌رنگ متن روی هاور */
-.link-btn i svg {
-  stroke: currentColor !important;
-}
 </style>
 </head>
 <body>
@@ -73,23 +69,19 @@ body{background:#000;color:#fff;display:flex;justify-content:center;align-items:
 
 </div>
 
-<!-- Feather Icons Script with hover fix -->
 <script src="https://unpkg.com/feather-icons"></script>
 <script>
-  // جایگزین کردن آیکون‌ها با رنگ سفید اولیه
+  // اول همه آیکون‌ها رو سفید می‌کنیم
   feather.replace({color: 'white', width: 20, height: 20});
 
-  // اصلاح رنگ آیکون‌ها هنگام هاور
+  // اضافه کردن هاور دقیق برای رنگ آیکون‌ها
   document.querySelectorAll('.link-btn').forEach(btn => {
+    const icons = btn.querySelectorAll('svg');
     btn.addEventListener('mouseenter', () => {
-      btn.querySelectorAll('i').forEach(icon => {
-        icon.setAttribute('stroke', getComputedStyle(btn).color);
-      });
+      icons.forEach(icon => icon.setAttribute('stroke','#000'));
     });
     btn.addEventListener('mouseleave', () => {
-      btn.querySelectorAll('i').forEach(icon => {
-        icon.setAttribute('stroke', 'white');
-      });
+      icons.forEach(icon => icon.setAttribute('stroke','#fff'));
     });
   });
 </script>
