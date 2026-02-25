@@ -22,10 +22,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  background-image: url('pattern-desktop.jpg');
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: cover;
   min-height: 100vh;
   color: #fff;
   display: flex;
@@ -33,14 +29,21 @@ body {
   align-items: center;
   text-align: center;
   position: relative;
+  background: 
+    linear-gradient(to top, rgba(0,0,0,0) 50%, #000 100%),
+    url('pattern-desktop.jpg') no-repeat bottom center;
+  background-size: cover;
 }
 
+/* موبایل */
 @media (max-width: 768px) {
   body {
-    background-image: url('pattern-mobile.jpg');
+    background: 
+      linear-gradient(to top, rgba(0,0,0,0) 50%, #000 100%),
+      url('pattern-mobile.jpg') no-repeat bottom center;
     background-size: cover;
-    background-position: bottom center;
   }
+}
 }
 .container{width:100%;max-width:500px;padding:40px 20px;}
 .logo{width:160px;margin:0 auto 25px auto;display:block;}
