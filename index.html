@@ -43,19 +43,45 @@ body {
       url('pattern-mobile.jpg') no-repeat bottom center;
     background-size: cover;
   }
+}
 
-.container{width:100%;max-width:500px;padding:40px 20px;}
-.logo{width:160px;margin:0 auto 25px auto;display:block;}
-.brand-name{font-size:38px;font-weight:500;letter-spacing:4px;margin-bottom:10px;}
-.slogan{font-size:14px;opacity:0.6;letter-spacing:2px;margin-bottom:40px;text-transform:uppercase;}
+.container{
+  width:100%;
+  max-width:500px; /* دسکتاپ محدود */
+  padding:40px 20px;
+}
+
+.logo{
+  width:160px; 
+  max-width:90%; /* واکنش‌گرا موبایل */
+  margin:0 auto 25px auto;
+  display:block;
+}
+
+.brand-name{
+  font-size:38px;
+  font-weight:500;
+  letter-spacing:4px;
+  margin-bottom:10px;
+}
+
+.slogan{
+  font-size:14px;
+  opacity:0.6;
+  letter-spacing:2px;
+  margin-bottom:40px;
+  text-transform:uppercase;
+}
+
 /* فاصله بیشتر بین لینک‌ها */
 .links{
   display: flex;
   flex-direction: column;
-  gap: 25px; /* قبلاً 18px بود، الان کمی بیشتر برای تنفس بصری */
+  gap: 25px;
+  align-items:center; /* وسط چین کردن دکمه‌ها */
 }
 
-/* سایه ملایم روی دکمه‌ها */
+/* سایه ملایم روی دکمه‌ها و محدود کردن عرض */
 .link-btn{
   display:flex;
   align-items:center;
@@ -68,18 +94,26 @@ body {
   color:#fff;
   font-size:15px;
   transition:all .3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* سایه ملایم */
-  width: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  width:100%;
+  max-width:400px; /* محدود کردن روی دسکتاپ */
+  margin:0 auto; /* وسط چین کردن */
 }
 
 .link-btn:hover{
   background:#fff;
   color:#000;
   transform:translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* کمی سایه بیشتر روی هاور */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
+
 .link-btn i{width:20px;height:20px;}
-.footer{margin-top:50px;font-size:12px;opacity:.4;}
+
+.footer{
+  margin-top:50px;
+  font-size:12px;
+  opacity:.4;
+}
 </style>
 </head>
 <body>
@@ -103,7 +137,6 @@ body {
             Email
         </a>
 
-        <!-- Instagram Added Here -->
         <a href="https://www.instagram.com/feje_studio?igsh=ZWo0dnFyeGkzbXJ1" target="_blank" class="link-btn">
             <i data-feather="instagram"></i>
             Instagram
