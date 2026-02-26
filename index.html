@@ -18,6 +18,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
 body {
   margin: 0;
   padding: 0;
@@ -47,15 +48,21 @@ body {
 
 .container{
   width:100%;
-  max-width:500px; /* دسکتاپ محدود */
+  max-width:500px;
   padding:40px 20px;
 }
 
 .logo{
   width:160px; 
-  max-width:90%; /* واکنش‌گرا موبایل */
+  max-width:90%;
   margin:0 auto 25px auto;
   display:block;
+  animation: logoEnter 1s ease-out; /* انیمیشن لوگو */
+}
+
+@keyframes logoEnter {
+  0% {opacity:0; transform: scale(0.8);}
+  100% {opacity:1; transform: scale(1);}
 }
 
 .brand-name{
@@ -63,6 +70,7 @@ body {
   font-weight:500;
   letter-spacing:4px;
   margin-bottom:10px;
+  text-shadow: 0 2px 6px rgba(255,255,255,0.2); /* برجسته‌تر دیده شدن */
 }
 
 .slogan{
@@ -78,10 +86,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  align-items:center; /* وسط چین کردن دکمه‌ها */
+  align-items:center;
 }
 
-/* سایه ملایم روی دکمه‌ها و محدود کردن عرض */
+/* دکمه‌ها با سایه و hover لوکس */
 .link-btn{
   display:flex;
   align-items:center;
@@ -93,17 +101,17 @@ body {
   text-decoration:none;
   color:#fff;
   font-size:15px;
-  transition:all .3s ease;
+  transition: all 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   width:100%;
-  max-width:400px; /* محدود کردن روی دسکتاپ */
-  margin:0 auto; /* وسط چین کردن */
+  max-width:400px;
+  margin:0 auto;
 }
 
 .link-btn:hover{
-  background:#fff;
+  background: linear-gradient(45deg, #fff, #f0f0f0);
   color:#000;
-  transform:translateY(-3px);
+  transform:translateY(-3px) scale(1.03); /* هاور scale */
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
